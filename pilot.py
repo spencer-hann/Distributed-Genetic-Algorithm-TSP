@@ -146,9 +146,9 @@ if __name__ == "__main__":
 
     problem = tsp.load_problem(PROBLEM_PATH)
     if problem.edge_weight_type == "GEO":
-        print("WARNING:", end=' ')
         problem.wfunc = lambda i, j: \
             tsp.distances.geographical(problem.node_coords[i], problem.node_coords[j])
+        print("WARNING:", end=' ')
     print("edge weight type:", problem.edge_weight_type)
     graph = problem.get_graph()
     dmat = distance_matrix(problem.node_coords)
